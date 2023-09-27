@@ -1,4 +1,4 @@
-const WeekForestCast = ({data}) => {
+const WeekForescast = ({data}) => {
     return (
       <div className="grid grid-cols-2 sm:grid-col-2 md:grid-cols-3 lg:grid-cols-7 gap-8 w-full">
           {data.forecast.forecastday.map((day,index)=>(
@@ -15,4 +15,4 @@ const WeekForestCast = ({data}) => {
     )
   }
   
-  export default WeekForestCast
+  export default WeekForescast
