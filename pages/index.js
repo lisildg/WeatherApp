@@ -55,7 +55,7 @@ if(Object.keys(data).length === 0 && error === ""){
     <>
     <div className="flex md:flex-row flex-col p-12 items-center justify-between">
       <Current data={data}/>
-      <WeekForestCast data={data}/>
+      <WeekForecast data={data}/>
     </div>
     <div>
       <WeatherDetails data={data}/>
