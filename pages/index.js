@@ -12,7 +12,6 @@ const [error, setError] = useState("");
 
 const apiKey = process.env.API_KEY;
 
-
 const url = `http://api.weatherapi.com/v1/forecast.json?key=f0932817b6a24456ab515535232709&q=${location}&days=7&aqi=yes&alerts=yes`;
 
 
