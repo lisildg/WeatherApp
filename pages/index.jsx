@@ -12,7 +12,7 @@ const [error, setError] = useState("");
 
 const apiKey = process.env.API_KEY;
 
-const url = `http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${location}&days=7&aqi=yes&alerts=yes`;
+const url = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${location}&days=7&aqi=yes&alerts=yes`;
 
 
 const handleSearch = async  (e)=>{
