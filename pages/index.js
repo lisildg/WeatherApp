@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import dotenv from 'dotenv';
 import Current from "./components/Current";
 import WeatherDetails from "./components/WeatherDetails";
-import WeekForecast from "./components/WeekForecast";
+import WeekForecast from "./components/Weekforecast";
 dotenv.config();
 export default function Home() {
 const [data, setData] = useState({});
