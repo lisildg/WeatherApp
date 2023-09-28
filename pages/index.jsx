@@ -1,9 +1,9 @@
-import Input from "./components/Input"; 
+import Input from "../components/Input"; 
 import React, { useState } from "react";
 import dotenv from 'dotenv';
-import Current from "./components/Current";
-import WeatherDetails from "./components/WeatherDetails";
-import WeekForecast from "./components/Weekforecast";
+import Current from "../components/Current";
+import WeatherDetails from "../components/WeatherDetails";
+import WeekForecast from "../components/Weekforecast";
 dotenv.config();
 export default function Home() {
 const [data, setData] = useState({});
@@ -12,7 +12,7 @@ const [error, setError] = useState("");
 
 const apiKey = process.env.API_KEY;
 
-const url = `http://api.weatherapi.com/v1/forecast.json?key=f0932817b6a24456ab515535232709&q=${location}&days=7&aqi=yes&alerts=yes`;
+const url = `http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${location}&days=7&aqi=yes&alerts=yes`;
 
 
 const handleSearch = async  (e)=>{
