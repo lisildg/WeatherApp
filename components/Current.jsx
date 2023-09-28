@@ -1,5 +1,5 @@
 import React from 'react'
- import { getCurrentDate } from '../../utils/currentDate';
+ import { getCurrentDate } from '../utils/currentDate';
  import {HiLocationMarker} from "react-icons/hi";
 
 

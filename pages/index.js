@@ -1,9 +1,9 @@
-import Input from "./components/Input"; 
+import Input from "../components/Input"; 
 import React, { useState } from "react";
 import dotenv from 'dotenv';
-import Current from "./components/Current";
-import WeatherDetails from "./components/WeatherDetails";
-import WeekForecast from "./components/Weekforecast";
+import Current from "../components/Current";
+import WeatherDetails from "../components/WeatherDetails";
+import WeekForecast from "../components/Weekforecast";
 dotenv.config();
 export default function Home() {
 const [data, setData] = useState({});
