@@ -18,7 +18,7 @@ const WeatherDetails = ({data}) => {
         <div className="bg-white/50 flex p-4 items-center justify-center gap-6 rounded-xl">
             <div className="text-2xl" >
                  <h3>Wind Speed</h3>
-                 <h3>{data.current.wind_mpg} mph</h3>
+                 <h3>{data.current.wind_mph} mph</h3>
             </div>
             <div >
                 <GiWindSlap fontSize={40}/>
@@ -28,7 +28,7 @@ const WeatherDetails = ({data}) => {
         <div className="bg-white/50 flex p-4 items-center justify-center gap-6 rounded-xl">
             <div className="text-2xl" >
                  <h3>Humidity</h3>
-                 <h3>{data.current.humedity} </h3>
+                 <h3>{data.current.humidity} </h3>
             </div>
             <div >
                 <WiHumidity fontSize={40}/>
