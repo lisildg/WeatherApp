@@ -4,11 +4,25 @@ import dotenv from 'dotenv';
 import Current from "../components/Current";
 import WeatherDetails from "../components/WeatherDetails";
 import WeekForecast from "../components/Weekforecast";
+import { useBackground, BackgroundProvider } from "../BackgroundContext";
 dotenv.config();
+
 export default function Home() {
 const [data, setData] = useState({});
 const [location, setLocation ]= useState("");
 const [error, setError] = useState("");
+const background = useBackground();
+let sunriseTime = null;
+let sunsetTime = null;
+
+if (data && data.forecast && data.forecast.forecastday && data.forecast.forecastday[0] && data.forecast.forecastday[0].astro) {
+  sunriseTime = new Date(data.forecast.forecastday[0].astro.sunrise);
+  sunsetTime = new Date(data.forecast.forecastday[0].astro.sunset);
+} else {
+  // Manejar el caso en el que los datos no tengan la estructura esperada
+  console.error("Los datos no tienen la estructura esperada.");
+}
+
 
 const apiKey = process.env.API_KEY;
 
@@ -64,7 +78,8 @@ if(Object.keys(data).length === 0 && error === ""){
 }
 
 return (
- <div className="bg-cover bg-gradient-to-r from-blue-500 to-blue-300 h-fit">
+  <BackgroundProvider sunriseTime={sunriseTime} sunsetTime={sunsetTime}>
+  <div className="bg-cover bg-gradient-to-r from-blue-500 to-blue-300 h-fit">
   <div className="bg-white/25 w-full  flex flex-col h-fit">
     <div className="flex flex-col md:flex-row justify-between items-center p-12">
       <Input handleSearch={handleSearch} setLocation={setLocation} /> 
@@ -73,5 +88,6 @@ return (
     {content}
   </div>
  </div>
+ </BackgroundProvider>
 )
 }
